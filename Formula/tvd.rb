@@ -1,9 +1,9 @@
 class Tvd < Formula
   desc "Download Twitch VODs"
   homepage "https://github.com/dbarbuzzi/tvd"
-  url "https://github.com/dbarbuzzi/tvd/releases/download/v0.4.2/tvd_0.4.2_macOS_64bit.tar.gz"
-  version "0.4.2"
-  sha256 "571a4ea44af4a1e7e699997c74a768b3af6e1bb2354534f4dcf7c2a0bb9a535c"
+  url "https://github.com/dbarbuzzi/tvd/releases/download/v0.4.3/tvd_0.4.3_macOS_64bit.tar.gz"
+  version "0.4.3"
+  sha256 "2e92d34bdd6cced6d2f668e28fa5100438380150da2e67773bc56afd914b639c"
 
   def install
     bin.install "tvd"
