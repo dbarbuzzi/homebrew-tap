@@ -1,9 +1,9 @@
 class Smudgetools < Formula
   desc "Tools for my work with smudge comics"
   homepage "https://github.com/dbarbuzzi/smudgetools"
-  url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.0.1/smudgetools_1.0.1_macOS_64bit.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-  version "1.0.1"
-  sha256 "4e61401e16a38aa8923697c60dd24a50fd6c96b8b2d5c5324669cec367c2a58c"
+  url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.1.0/smudgetools_1.1.0_macOS_64bit.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+  version "1.1.0"
+  sha256 "e0060887086dfd8707afa682eec78ca1f12cf16db45d5c26a1dc7529024481c2"
 
   def install
     bin.install "smudge"
