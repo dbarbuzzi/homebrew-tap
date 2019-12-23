@@ -3,14 +3,17 @@ require_relative "../custom_download_strategy"
 class Smudgetools < Formula
   desc "Tools for my work with smudge comics"
   homepage "https://github.com/dbarbuzzi/smudgetools"
-  version "1.2.1"
+  version "1.2.2"
+  bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.2.1/smudgetools_1.2.1_macOS_64bit.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "f62e49da50f30cd94c3c8235da73957ff444aef3f714cfcb843480b3150858e2"
+    url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.2.2/smudgetools_1.2.2_macOS_64bit.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "0df5b127df826d75eb555d2966658de51e97c467c3148c36dfc5a4c9bc3bd6cc"
   elsif OS.linux?
-    url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.2.1/smudgetools_1.2.1_Linux_64bit.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "1234e1970b7dc0e76bd819a3fbd129819a8a6cadb8ff865dc4a9ee81afa4cdfd"
+    if Hardware::CPU.intel?
+      url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.2.2/smudgetools_1.2.2_Linux_64bit.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "63188efadc0f65eaf64fbdc7ff6946c71b295fb25fb86a7eeb8c114604fb4b4c"
+    end
   end
 
   def install
