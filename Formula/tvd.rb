@@ -5,16 +5,16 @@
 class Tvd < Formula
   desc "Download Twitch VODs"
   homepage "https://github.com/dbarbuzzi/tvd"
-  version "0.5.1"
+  version "0.6.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/dbarbuzzi/tvd/releases/download/v0.5.1/tvd_0.5.1_macOS_amd64.tar.gz"
-    sha256 "abf1c299b58e178786be5522ca80f46c2df19307e57e5339de598a21896235d2"
+    url "https://github.com/dbarbuzzi/tvd/releases/download/v0.6.0/tvd_0.6.0_macOS_amd64.tar.gz"
+    sha256 "bbd396661294e85db0dc25d28f8c0fe5d866a10fd39ae524a01b1e32c802044b"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/dbarbuzzi/tvd/releases/download/v0.5.1/tvd_0.5.1_linux_amd64.tar.gz"
-    sha256 "b44f6256c0ce87d30156a39da3d06a7c7f4f3ca0d25aec8cff5d085d76726ac6"
+    url "https://github.com/dbarbuzzi/tvd/releases/download/v0.6.0/tvd_0.6.0_linux_amd64.tar.gz"
+    sha256 "0f6c1fff914ba9d7719fdfe8ad327c5b2ced5ca8f53e8705a4f04c62871f4b83"
   end
 
   def install
