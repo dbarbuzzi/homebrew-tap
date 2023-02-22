@@ -101,8 +101,6 @@ end
 # environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
 class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDownloadStrategy
   def initialize(url, name, version, **meta)
-    odeprecated("GitHubPrivateRepositoryReleaseDownloadStrategy",
-      "maintaining GitHubPrivateRepositoryReleaseDownloadStrategy in your own formula or tap")
     super
   end
 
@@ -157,8 +155,6 @@ end
 #     ...
 class ScpDownloadStrategy < AbstractFileDownloadStrategy
   def initialize(url, name, version, **meta)
-    odeprecated("ScpDownloadStrategy",
-      "maintaining ScpDownloadStrategy in your own formula or tap")
     super
     parse_url_pattern
   end
