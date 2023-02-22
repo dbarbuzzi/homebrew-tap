@@ -9,8 +9,6 @@ require "download_strategy"
 # distribution.  (It will work for public buckets as well.)
 class S3DownloadStrategy < CurlDownloadStrategy
   def initialize(url, name, version, **meta)
-    odeprecated("S3DownloadStrategy",
-      "maintaining S3DownloadStrategy in your own formula or tap")
     super
   end
 
@@ -51,8 +49,6 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   require "utils/github"
 
   def initialize(url, name, version, **meta)
-    odeprecated("GitHubPrivateRepositoryDownloadStrategy",
-      "maintaining GitHubPrivateRepositoryDownloadStrategy in your own formula or tap")
     super
     parse_url_pattern
     set_github_token
@@ -213,12 +209,8 @@ class DownloadStrategyDetector
       def detect_from_url(url)
         case url
         when %r{^s3://}
-          odeprecated("s3://",
-            "maintaining S3DownloadStrategy in your own formula or tap")
           S3DownloadStrategy
         when %r{^scp://}
-          odeprecated("scp://",
-            "maintaining ScpDownloadStrategy in your own formula or tap")
           ScpDownloadStrategy
         else
           super(url)
@@ -228,20 +220,12 @@ class DownloadStrategyDetector
       def detect_from_symbol(symbol)
         case symbol
         when :github_private_repo
-          odeprecated(":github_private_repo",
-            "maintaining GitHubPrivateRepositoryDownloadStrategy in your own formula or tap")
           GitHubPrivateRepositoryDownloadStrategy
         when :github_private_release
-          odeprecated(":github_private_repo",
-            "maintaining GitHubPrivateRepositoryReleaseDownloadStrategy in your own formula or tap")
           GitHubPrivateRepositoryReleaseDownloadStrategy
         when :s3
-          odeprecated(":s3",
-            "maintaining S3DownloadStrategy in your own formula or tap")
           S3DownloadStrategy
         when :scp
-          odeprecated(":scp",
-            "maintaining ScpDownloadStrategy in your own formula or tap")
           ScpDownloadStrategy
         else
           super(symbol)
