@@ -6,13 +6,13 @@ require_relative "../custom_download_strategy"
 class Smudgetools < Formula
   desc "Tools for my work with smudge comics"
   homepage "https://github.com/dbarbuzzi/smudgetools"
-  version "1.3.0"
+  version "1.4.0"
 
   on_macos do
-    url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.3.0/smudgetools_1.3.0_macOS_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "2ea099bbb60500021b9dacdb3b1f62b0659ff8e86013f1930e5441853e95f576"
+    url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.4.0/smudgetools_1.4.0_darwin_amd64.zip", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "63ed409580a146cc6af056993c3691f2f4e1e2f941a775178f8651432b2f57e5"
 
-    def install
+    define_method(:install) do
       bin.install "smudge"
     end
 
@@ -28,11 +28,10 @@ class Smudgetools < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.3.0/smudgetools_1.3.0_Linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "12d62362cdb40d0e6d7477fc4388bec957cace77209be440f40f927211bc990b"
-
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/dbarbuzzi/smudgetools/releases/download/v1.4.0/smudgetools_1.4.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "c624c3335fe044678b71a36b2d25bb37009d3ed98cda73c85f764e473990ff47"
+      define_method(:install) do
         bin.install "smudge"
       end
     end
